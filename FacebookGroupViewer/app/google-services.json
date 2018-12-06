@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "528829326528",
+    "firebase_url": "https://facebook-group-viewer.firebaseio.com",
+    "project_id": "facebook-group-viewer",
+    "storage_bucket": "facebook-group-viewer.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:528829326528:android:249e259deb020ef6",
+        "android_client_info": {
+          "package_name": "io.google.facebookgroupviewer"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "528829326528-2vk170637g2hlapue2eu0asgcfufstc2.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAALvSdsV33XNz2Ynq_CSW_losV23kEcMI"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
