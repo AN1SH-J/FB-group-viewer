@@ -28,7 +28,7 @@ public class MainActivity extends AppCompatActivity {
         {
             Feed feedlist=new Feed(
                     "Card: " +(i+1),
-                    "Hopefully 50% done!"
+                    "Card Description!"
             );
             feedList.add(feedlist);
             adapter=new myadapter(feedList,this);
