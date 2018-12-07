@@ -9,16 +9,22 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 
 import java.util.List;
+import android.content.Context;
+import android.support.v7.widget.RecyclerView;
+import android.view.View;
+import android.view.ViewGroup;
+import android.widget.TextView;
 
 public class myadapter extends RecyclerView.Adapter<myadapter.ViewHolder> {
 
+    private List<Feed> feedList;
+    private Context context;
     public myadapter(List<Feed> feedList, Context context) {
         this.feedList = feedList;
         this.context = context;
     }
 
-    private List<Feed> feedList;
-    private Context context;
+
 
 
     @Override
