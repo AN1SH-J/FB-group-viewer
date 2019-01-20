@@ -30,26 +30,28 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        recyclerView = (RecyclerView) findViewById(R.id.feed);
+        recyclerView = findViewById(R.id.feed);
         recyclerView.setHasFixedSize(true);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
 
         feedList = new ArrayList<>();
-
+        progressDialog = new ProgressDialog(this);
         progressDialog.setMessage("LOADING...");
         progressDialog.show();
-        mDatabase = FirebaseDatabase.getInstance().getReference(constants.DATABASE_PATH_UPLOADS);
+        mDatabase = FirebaseDatabase.getInstance().getReference();
         mDatabase.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
 
                 progressDialog.dismiss();
                 for(DataSnapshot postSnapshot : dataSnapshot.getChildren()) {
-                    Feed upload = postSnapshot.getValue(Feed.class);
+                    String name =postSnapshot.child("name").getValue().toString();
+                    String desc= postSnapshot.child("url").getValue().toString();
+                    Feed upload = new Feed(name,desc);
                     feedList.add(upload);
                 }
 
-                    adapter = new myadapter(getApplicationContext(),feedList);
+                    adapter = new myadapter(feedList,getApplicationContext());
                     recyclerView.setAdapter(adapter);
 
 
